@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_out_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <!--
+        设置状态栏的透明度，与fitsSystemWindows为true，
+        和UtilsStyle设置状态栏透明工具类配合使用
+      -->
+    <View
+        android:id="@+id/status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/out_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/frag_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/today_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+
+                    <TextView
+                        android:id="@+id/frag_tv_city"
+                        style="@style/todayText"
+                        android:layout_alignParentRight="true"
+                        android:text="广州"
+                        android:textSize="50sp" />
+
+                    <ImageView
+                        android:id="@+id/item_main_iv"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/frag_tv_city"
+                        android:layout_toRightOf="@+id/frag_tv_currenttemp"
+                        android:src="@mipmap/i00" />
+
+                    <TextView
+                        android:id="@+id/frag_tv_currenttemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/frag_tv_city"
+                        android:text="15℃"
+                        android:textSize="80sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/frag_tv_condition"
+                        style="@style/todayText"
+                        android:layout_below="@id/frag_tv_city"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="20dp"
+                        android:text="晴"
+                        android:textSize="40sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/frag_tv_currenttemp">
+
+                        <TextView
+                            android:id="@+id/frag_tv_date"
+                            style="@style/todayText"
+                            android:layout_margin="5dp"
+                            android:text="2019-12-08" />
+
+                        <TextView
+                            android:id="@+id/frag_tv_temprange"
+                            style="@style/todayText"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="5dp"
+                            android:text="7/20℃" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+                <!-- 用于显示未来五天的天气情况-->
+                <LinearLayout
+                    android:id="@+id/frag_center_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/frag_bg"
+                    android:orientation="vertical"
+                    android:padding="10dp" />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/main_iv_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="#FBFBFF"
+        app:borderWidth="0dp"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/main_iv_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="#F8F8FF"
+        app:borderWidth="0dp"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_input_get" />
+
+</RelativeLayout>

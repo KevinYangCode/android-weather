@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <View
+        android:id="@+id/status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <RelativeLayout
+        android:id="@+id/city_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#F5F5F5">
+
+        <ImageView
+            android:id="@+id/city_iv_back2"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@mipmap/icon_back" />
+
+        <TextView
+            android:id="@+id/city_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="搜索城市"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/city_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/city_top_layout"
+        android:background="#DCDCDC" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/city_line"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/search_iv_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/icon_search" />
+
+        <EditText
+            android:id="@+id/search_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/search_iv_submit"
+            android:background="@drawable/searchbg"
+            android:hint="搜索国内城市:"
+            android:padding="3dp" />
+
+        <TextView
+            android:id="@+id/search_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search_et"
+            android:layout_marginTop="20dp"
+            android:text="热门城市"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <GridView
+            android:id="@+id/search_gv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/search_tv"
+            android:numColumns="5" />
+    </RelativeLayout>
+
+</RelativeLayout>
