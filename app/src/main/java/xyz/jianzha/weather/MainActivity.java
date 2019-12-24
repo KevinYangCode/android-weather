@@ -151,9 +151,6 @@ public class MainActivity extends BaseFragment implements View.OnClickListener {
         }
         notificationManager.notify(0, notificationBuilder.build());
 
-
-
-
         /* 未来5天分析 */
         for (int i = 0; i < futureBeanList.size(); i++) {
             View itemView = LayoutInflater.from(this).inflate(R.layout.item_future_main_center, null);
